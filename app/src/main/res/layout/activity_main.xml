@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/baseTextLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:text="Bill:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Amount:" />
+
+    <TextView
+        android:id="@+id/tipPercentageLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="24%:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@id/baseTextLabel"
+        app:layout_constraintTop_toBottomOf="@+id/baseTextLabel"
+        tools:text="24%" />
+
+    <TextView
+        android:id="@+id/tipTextLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Tip:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@id/baseTextLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tipPercentageLabel"
+        tools:text="Tip:" />
+
+    <TextView
+        android:id="@+id/textTotalLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Total:"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        app:layout_constraintEnd_toEndOf="@id/baseTextLabel"
+        app:layout_constraintTop_toBottomOf="@+id/tipTextLabel"
+        tools:text="Total:" />
+
+    <EditText
+        android:id="@+id/baseAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:ems="8"
+        android:hint="Bill amount"
+        android:inputType="numberDecimal"
+        android:textSize="24sp"
+        app:layout_constraintStart_toEndOf="@+id/baseTextLabel"
+        app:layout_constraintTop_toTopOf="@id/baseTextLabel"
+        app:layout_constraintBottom_toBottomOf="@id/baseTextLabel"
+         />
+
+    <SeekBar
+        android:id="@+id/tipBar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:max="45"
+        app:layout_constraintBottom_toBottomOf="@+id/tipPercentageLabel"
+        app:layout_constraintStart_toStartOf="@+id/baseAmount"
+        app:layout_constraintTop_toTopOf="@+id/tipPercentageLabel" />
+
+    <TextView
+        android:id="@+id/tipAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="19.96"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/tipTextLabel"
+        app:layout_constraintStart_toStartOf="@+id/tipBar"
+        app:layout_constraintTop_toTopOf="@+id/tipTextLabel"
+        tools:text="19.96" />
+
+    <TextView
+        android:id="@+id/totalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="119"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        app:layout_constraintBottom_toBottomOf="@+id/textTotalLabel"
+        app:layout_constraintStart_toStartOf="@+id/tipAmount"
+        app:layout_constraintTop_toTopOf="@+id/textTotalLabel"
+        tools:text="119" />
+</androidx.constraintlayout.widget.ConstraintLayout>
